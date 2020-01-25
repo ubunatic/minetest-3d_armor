@@ -1,7 +1,6 @@
 -- Fire Protection and water breating, added by TenPlus1
 
 local S = armor_i18n.gettext
-local F = minetest.formspec_escape
 
 if armor.config.fire_protect == true then
 	-- override hot nodes so they do not hurt player anywhere but mod
