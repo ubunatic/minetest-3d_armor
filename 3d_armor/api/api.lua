@@ -33,8 +33,7 @@ armor = {
 	elements = {"head", "torso", "legs", "feet"},
 	physics = {"jump", "speed", "gravity"},
 	attributes = {"heal", "fire", "water"},
-	formspec =
-		"image[2.5,0;2,4;armor_preview]"..
+	formspec = "image[2.5,0;2,4;armor_preview]"..
 		default.gui_bg..
 		default.gui_bg_img..
 		default.gui_slots..
@@ -43,8 +42,7 @@ armor = {
 		"list[current_player;main;0,5.85;8,3;8]"..
 		"label[5,1;"..F(S("Level"))..": armor_level]"..
 		"label[5,1.5;"..F(S("Heal"))..":  armor_attr_heal]",
-	formspec_technic =
-		"label[5,2.5;"..F(S("Radiation"))..":  armor_group_radiation]",
+	formspec_technic = "label[5,2.5;"..F(S("Radiation"))..":  armor_group_radiation]",
 	formspec_fire = "label[5,2;"..F(S("Fire"))..":  armor_attr_fire]",
 	def = armor_def,
 	textures = armor_textures,
