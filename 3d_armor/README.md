@@ -1,11 +1,11 @@
 [mod] Visible Player Armor [3d_armor]
 =====================================
 
-Depends: default
+**Depends**: default
 
-Recommends: sfinv, unified_inventory or smart_inventory (use only one to avoid conflicts)
+**Recommends**: sfinv, unified_inventory, or smart_inventory (use only one to avoid conflicts)
 
-Supports: player_monoids and armor_monoid
+**Supports**: player_monoids + armor_monoid or pova
 
 Adds craftable armor that is visible to other players. Each armor item worn contributes to
 a player's armor group level making them less vulnerable to weapons.
@@ -19,8 +19,8 @@ protects against torches, level 2 for crystal spike, level 3 for fire, level 5 f
 Armor Configuration
 -------------------
 
-Override the following default settings by adding them to your minetest.conf file.
-
+Override the following default settings by adding them to your `minetest.conf` file.
+```lua
 -- Set false to disable individual armor materials.
 armor_material_wood = true
 armor_material_cactus = true
@@ -70,20 +70,22 @@ armor_punch_damage = true
 
 -- Enable migration of old armor inventories
 armor_migrate_old_inventory = true
+```
 
 API
 ---
 
 Armor Registration:
-
+```lua
 armor:register_armor(name, def)
+```
 
 Wrapper function for `minetest.register_tool`, while registering armor as
 a tool item is still supported, this may be deprecated in future so new code
 should use this method.
 
 Additional fields supported by 3d_armor:
-
+```
 	texture = <filename>
 	preview = <filename>
 	armor_groups = <table>
@@ -94,13 +96,15 @@ Additional fields supported by 3d_armor:
 	on_destroy = <function>
 	on_damage = <function>
 	on_punched = <function>
-
+```
+```lua
 armor:register_armor_group(group, base)
-
+```
 Example:
-
+```lua
 armor:register_armor_group("radiation", 100)
-
+```
+```lua
 armor:register_armor("mod_name:speed_boots", {
 	description = "Speed Boots",
 	inventory_image = "mod_name_speed_boots_inv.png",
@@ -121,17 +125,18 @@ armor:register_armor("mod_name:speed_boots", {
 		end
 	end,
 })
+```
 
-See armor.lua, technic_armor and shields mods for more examples.
+See `armor.lua`, `technic_armor` and `shields` mods for more examples.
 
-Default groups:
+**Default groups**:
 
 Elements: armor_head, armor_torso, armor_legs, armor_feet
 Attributes: armor_heal, armor_fire, armor_water
 Physics: physics_jump, physics_speed, physics_gravity
 Durability: armor_use, flammable
 
-Notes:
+**Notes**:
 
 Elements may be modified by dependent mods, eg shields adds armor_shield.
 Attributes and physics values are 'stackable', durability is determined
@@ -141,26 +146,27 @@ damage groups need to be defined in the tool/weapon used against the player.
 Reciprocal tool damage will be done only by the first armor inventory item
  with `reciprocate_damage = true`
 
-Armor Functions:
-
+**Armor Functions**:
+```lua
 armor:set_player_armor(player)
+```
 
 Primarily an internal function but can be called externally to apply any
 changes that might not otherwise get handled.
-
+```lua
 armor:punch(player, hitter, time_from_last_punch, tool_capabilities)
-
+```
 Used to apply damage to all equipped armor based on the damage groups of
 each individual item.`hitter`, `time_from_last_punch` and `tool_capabilities`
 are optional but should be valid if included.
-
+```lua
 armor:damage(player, index, stack, use)
-
+```
 Adds wear to a single armor itemstack, triggers `on_damage` callbacks and
 updates the necessary inventories. Also handles item destruction callbacks
 and so should NOT be called from `on_unequip` to avoid an infinite loop.
 
-Item Callbacks:
+**Item Callbacks**:
 
 on_equip = func(player, index, stack)
 on_unequip = func(player, index, stack)
@@ -168,7 +174,7 @@ on_destroy = func(player, index, stack)
 on_damage = func(player, index, stack)
 on_punched = func(player, hitter, time_from_last_punch, tool_capabilities)
 
-Notes:
+**Notes**:
 
 `on_punched` is called every time a player is punched or takes damage, `hitter`,
 `time_from_last_punch` and `tool_capabilities` can be `nil` and will be in the
@@ -176,16 +182,16 @@ case of fall damage, etc. When fire protection is enabled, hitter == "fire"
 in the event of fire damage. Return `false` to override armor damage effects.
 When armor is destroyed `stack` will contain a copy of the previous stack.
 
-Global Callbacks:
-
+**Global Callbacks**:
+```lua
 armor:register_on_update(func(player))
 armor:register_on_equip(func(player, index, stack))
 armor:register_on_unequip(func(player, index, stack))
 armor:register_on_destroy(func(player, index, stack))
-
-Global Callback Example:
-
+```
+**Global Callback Example**:
+```lua
 armor:register_on_update(function(player)
 	print(player:get_player_name().." armor updated!")
 end)
-
+```
