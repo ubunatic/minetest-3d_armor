@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3d_armor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 21:21+0200\n"
+"POT-Creation-Date: 2020-01-25 23:24+0100\n"
 "PO-Revision-Date: 2018-07-23 21:30+0200\n"
 "Last-Translator: CodeXP <codexp@gmx.net>\n"
 "Language-Team: \n"
@@ -16,18 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Player reference is nil @1"
-msgstr "3d_armor: Ссылка игрока является nil @1"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Player name is nil @1"
-msgstr "3d_armor: Имя игрока является nil @1"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Detached armor inventory is nil @1"
-msgstr "3d_armor: Отдельный инвентарь брони является nil @1"
 
 #: ../3d_armor/armor.lua
 msgid "Admin Helmet"
@@ -173,34 +161,6 @@ msgstr "кристалловые гамаши"
 msgid "Crystal Boots"
 msgstr "кристалловые ботинки"
 
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Radiation"
-msgstr "излучение"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Level"
-msgstr "уровень"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Heal"
-msgstr "исцеление"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Fire"
-msgstr "огонь"
-
-#: ../3d_armor/init.lua
-msgid "Your @1 got destroyed!"
-msgstr "твой(и) @1 был(и) разрушен(ы)!"
-
-#: ../3d_armor/init.lua
-msgid "3d_armor: Failed to initialize player"
-msgstr "3d_armor: не смог подготовить игрока"
-
-#: ../3d_armor/init.lua
-msgid "[3d_armor] Fire Nodes disabled"
-msgstr "[3d_armor] блоки огня отключены"
-
 #: ../3d_armor_ip/init.lua
 msgid "3d_armor_ip: Mod loaded but unused."
 msgstr "3d_armor_ip: мод загружен но не используется."
@@ -249,6 +209,22 @@ msgstr "3D бронь"
 msgid "Armor not initialized!"
 msgstr "бронь не подготовлена!"
 
+#: ../3d_armor_ui/init.lua
+msgid "Level"
+msgstr "уровень"
+
+#: ../3d_armor_ui/init.lua
+msgid "Heal"
+msgstr "исцеление"
+
+#: ../3d_armor_ui/init.lua
+msgid "Fire"
+msgstr "огонь"
+
+#: ../3d_armor_ui/init.lua
+msgid "Radiation"
+msgstr "излучение"
+
 #: ../shields/init.lua
 msgid "Admin Shield"
 msgstr "щит админа"
@@ -292,3 +268,21 @@ msgstr "мифриловый щит"
 #: ../shields/init.lua
 msgid "Crystal Shield"
 msgstr "кристалловый щит"
+
+#~ msgid "3d_armor: Player reference is nil @1"
+#~ msgstr "3d_armor: Ссылка игрока является nil @1"
+
+#~ msgid "3d_armor: Player name is nil @1"
+#~ msgstr "3d_armor: Имя игрока является nil @1"
+
+#~ msgid "3d_armor: Detached armor inventory is nil @1"
+#~ msgstr "3d_armor: Отдельный инвентарь брони является nil @1"
+
+#~ msgid "[3d_armor] Fire Nodes disabled"
+#~ msgstr "[3d_armor] блоки огня отключены"
+
+#~ msgid "Your @1 got destroyed!"
+#~ msgstr "твой(и) @1 был(и) разрушен(ы)!"
+
+#~ msgid "3d_armor: Failed to initialize player"
+#~ msgstr "3d_armor: не смог подготовить игрока"

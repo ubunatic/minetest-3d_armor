@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 21:24+0200\n"
+"POT-Creation-Date: 2020-01-25 23:24+0100\n"
 "PO-Revision-Date: 2018-07-23 21:30+0200\n"
 "Last-Translator: fat115 <fat115@framasoft.org>\n"
 "Language-Team: \n"
@@ -17,18 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.12\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Player reference is nil @1"
-msgstr "3d_armor : Référence au joueur non trouvée @1"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Player name is nil @1"
-msgstr "3d_armor : Nom du joueur non trouvé @1"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Detached armor inventory is nil @1"
-msgstr "3d_armor : Inventaire détaché pour l'armure non trouvé @1"
 
 #: ../3d_armor/armor.lua
 msgid "Admin Helmet"
@@ -174,34 +162,6 @@ msgstr "Jambières en cristal"
 msgid "Crystal Boots"
 msgstr "Bottes en cristal"
 
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Radiation"
-msgstr "Radiation"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Level"
-msgstr "Niveau"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Heal"
-msgstr "Soins"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Fire"
-msgstr "Fire"
-
-#: ../3d_armor/init.lua
-msgid "Your @1 got destroyed!"
-msgstr "Une partie de votre armure a été détruite : @1 !"
-
-#: ../3d_armor/init.lua
-msgid "3d_armor: Failed to initialize player"
-msgstr "3d_armor : Impossible d'initialiser le joueur"
-
-#: ../3d_armor/init.lua
-msgid "[3d_armor] Fire Nodes disabled"
-msgstr "[3d_armor] Noeuds de type feu désactivés"
-
 #: ../3d_armor_ip/init.lua
 msgid "3d_armor_ip: Mod loaded but unused."
 msgstr "3d_armor_ip : Mod chargé mais inutilisé."
@@ -250,6 +210,22 @@ msgstr "Armure 3d"
 msgid "Armor not initialized!"
 msgstr "Armure non initialisée !"
 
+#: ../3d_armor_ui/init.lua
+msgid "Level"
+msgstr "Niveau"
+
+#: ../3d_armor_ui/init.lua
+msgid "Heal"
+msgstr "Soins"
+
+#: ../3d_armor_ui/init.lua
+msgid "Fire"
+msgstr "Fire"
+
+#: ../3d_armor_ui/init.lua
+msgid "Radiation"
+msgstr "Radiation"
+
 #: ../shields/init.lua
 msgid "Admin Shield"
 msgstr "Bouclier d'admin"
@@ -293,3 +269,21 @@ msgstr "Bouclier en mithril"
 #: ../shields/init.lua
 msgid "Crystal Shield"
 msgstr "Bouclier en cristal"
+
+#~ msgid "3d_armor: Player reference is nil @1"
+#~ msgstr "3d_armor : Référence au joueur non trouvée @1"
+
+#~ msgid "3d_armor: Player name is nil @1"
+#~ msgstr "3d_armor : Nom du joueur non trouvé @1"
+
+#~ msgid "3d_armor: Detached armor inventory is nil @1"
+#~ msgstr "3d_armor : Inventaire détaché pour l'armure non trouvé @1"
+
+#~ msgid "[3d_armor] Fire Nodes disabled"
+#~ msgstr "[3d_armor] Noeuds de type feu désactivés"
+
+#~ msgid "Your @1 got destroyed!"
+#~ msgstr "Une partie de votre armure a été détruite : @1 !"
+
+#~ msgid "3d_armor: Failed to initialize player"
+#~ msgstr "3d_armor : Impossible d'initialiser le joueur"

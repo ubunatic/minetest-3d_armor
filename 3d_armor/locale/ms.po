@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 21:21+0200\n"
+"POT-Creation-Date: 2020-01-25 23:24+0100\n"
 "PO-Revision-Date: 2018-07-23 21:30+0200\n"
 "Last-Translator: MuhdNurHidayat (MNH48) <mnh48mail@gmail.com>\n"
 "Language-Team: \n"
@@ -17,18 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Player reference is nil @1"
-msgstr "3d_armor: Rujukan pemain tiada nilai @1"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Player name is nil @1"
-msgstr "3d_armor: Nama pemain tiada nilai @1"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Detached armor inventory is nil @1"
-msgstr "3d_armor: Inventori perisai terpisah tiada nilai @1"
 
 #: ../3d_armor/armor.lua
 msgid "Admin Helmet"
@@ -175,34 +163,6 @@ msgstr "Perisai Kaki Kristal"
 msgid "Crystal Boots"
 msgstr "But Kristal"
 
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Radiation"
-msgstr "Radiasi"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Level"
-msgstr "Tahap"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Heal"
-msgstr "Pulih"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Fire"
-msgstr "Api"
-
-#: ../3d_armor/init.lua
-msgid "Your @1 got destroyed!"
-msgstr "@1 anda telah musnah!"
-
-#: ../3d_armor/init.lua
-msgid "3d_armor: Failed to initialize player"
-msgstr "3d_armor: Gagal mengasalkan pemain"
-
-#: ../3d_armor/init.lua
-msgid "[3d_armor] Fire Nodes disabled"
-msgstr "[3d_armor] Nod-nod Api dilumpuhkan"
-
 #: ../3d_armor_ip/init.lua
 msgid "3d_armor_ip: Mod loaded but unused."
 msgstr "3d_armor_ip: Mods dimuatkan tetapi tidak digunakan."
@@ -251,6 +211,22 @@ msgstr "Perisai 3d"
 msgid "Armor not initialized!"
 msgstr "Perisai tidak diasalkan!"
 
+#: ../3d_armor_ui/init.lua
+msgid "Level"
+msgstr "Tahap"
+
+#: ../3d_armor_ui/init.lua
+msgid "Heal"
+msgstr "Pulih"
+
+#: ../3d_armor_ui/init.lua
+msgid "Fire"
+msgstr "Api"
+
+#: ../3d_armor_ui/init.lua
+msgid "Radiation"
+msgstr "Radiasi"
+
 #: ../shields/init.lua
 msgid "Admin Shield"
 msgstr "Perisai Pegang Pentadbir"
@@ -294,3 +270,21 @@ msgstr "Perisai Pegang Mithril"
 #: ../shields/init.lua
 msgid "Crystal Shield"
 msgstr "Perisai Pegang Kristal"
+
+#~ msgid "3d_armor: Player reference is nil @1"
+#~ msgstr "3d_armor: Rujukan pemain tiada nilai @1"
+
+#~ msgid "3d_armor: Player name is nil @1"
+#~ msgstr "3d_armor: Nama pemain tiada nilai @1"
+
+#~ msgid "3d_armor: Detached armor inventory is nil @1"
+#~ msgstr "3d_armor: Inventori perisai terpisah tiada nilai @1"
+
+#~ msgid "[3d_armor] Fire Nodes disabled"
+#~ msgstr "[3d_armor] Nod-nod Api dilumpuhkan"
+
+#~ msgid "Your @1 got destroyed!"
+#~ msgstr "@1 anda telah musnah!"
+
+#~ msgid "3d_armor: Failed to initialize player"
+#~ msgstr "3d_armor: Gagal mengasalkan pemain"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Italian localization file for the 3D Armor module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 21:24+0200\n"
+"POT-Creation-Date: 2020-01-25 23:24+0100\n"
 "PO-Revision-Date: 2018-07-23 21:30+0200\n"
 "Last-Translator: H4mlet <h4mlet@riseup.net>\n"
 "Language-Team: ITALIANO\n"
@@ -17,18 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.6.10\n"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Player reference is nil @1"
-msgstr "3d_armor: Il riferimento alla/al giocatrice/tore è nullo @1"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Player name is nil @1"
-msgstr "3d_armor: Il nome della/del gicatrice/tore è nullo @1"
-
-#: ../3d_armor/api.lua
-msgid "3d_armor: Detached armor inventory is nil @1"
-msgstr "3d_armor: L'inventario staccato dell'armatura è nullo @1"
 
 #: ../3d_armor/armor.lua
 msgid "Admin Helmet"
@@ -174,34 +162,6 @@ msgstr "Gambali di cristallo"
 msgid "Crystal Boots"
 msgstr "Stivali di cristallo"
 
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Radiation"
-msgstr "Radiazione"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Level"
-msgstr "Livello"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Heal"
-msgstr "Guarigione"
-
-#: ../3d_armor/init.lua ../3d_armor_ui/init.lua
-msgid "Fire"
-msgstr "Fuoco"
-
-#: ../3d_armor/init.lua
-msgid "Your @1 got destroyed!"
-msgstr "Il/i vostro/i @1 è/sono stato/i distrutto/i!"
-
-#: ../3d_armor/init.lua
-msgid "3d_armor: Failed to initialize player"
-msgstr "3d_armor: Inizializzazione della/del giocatrice/tore fallita"
-
-#: ../3d_armor/init.lua
-msgid "[3d_armor] Fire Nodes disabled"
-msgstr "[3d_armor] Nodi fuoco disabilitati"
-
 #: ../3d_armor_ip/init.lua
 msgid "3d_armor_ip: Mod loaded but unused."
 msgstr "3d_armor_ip: Mod caricato ma inutilizzato."
@@ -250,6 +210,22 @@ msgstr "Armatura 3D"
 msgid "Armor not initialized!"
 msgstr "Armatura non inizializzata!"
 
+#: ../3d_armor_ui/init.lua
+msgid "Level"
+msgstr "Livello"
+
+#: ../3d_armor_ui/init.lua
+msgid "Heal"
+msgstr "Guarigione"
+
+#: ../3d_armor_ui/init.lua
+msgid "Fire"
+msgstr "Fuoco"
+
+#: ../3d_armor_ui/init.lua
+msgid "Radiation"
+msgstr "Radiazione"
+
 #: ../shields/init.lua
 msgid "Admin Shield"
 msgstr "Scudo dell'amministratrice/tore"
@@ -293,3 +269,21 @@ msgstr "Scudo di mithril"
 #: ../shields/init.lua
 msgid "Crystal Shield"
 msgstr "Scudo di cristallo"
+
+#~ msgid "3d_armor: Player reference is nil @1"
+#~ msgstr "3d_armor: Il riferimento alla/al giocatrice/tore è nullo @1"
+
+#~ msgid "3d_armor: Player name is nil @1"
+#~ msgstr "3d_armor: Il nome della/del gicatrice/tore è nullo @1"
+
+#~ msgid "3d_armor: Detached armor inventory is nil @1"
+#~ msgstr "3d_armor: L'inventario staccato dell'armatura è nullo @1"
+
+#~ msgid "[3d_armor] Fire Nodes disabled"
+#~ msgstr "[3d_armor] Nodi fuoco disabilitati"
+
+#~ msgid "Your @1 got destroyed!"
+#~ msgstr "Il/i vostro/i @1 è/sono stato/i distrutto/i!"
+
+#~ msgid "3d_armor: Failed to initialize player"
+#~ msgstr "3d_armor: Inizializzazione della/del giocatrice/tore fallita"
