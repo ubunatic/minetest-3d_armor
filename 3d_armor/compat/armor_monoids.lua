@@ -1,1 +1,0 @@
--- armor_monoids support

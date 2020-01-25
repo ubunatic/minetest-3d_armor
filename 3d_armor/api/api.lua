@@ -3,9 +3,6 @@ local S = armor_i18n.gettext
 local F = minetest.formspec_escape
 
 local skin_previews = {}
-local use_player_monoids = minetest.global_exists("player_monoids")
-local use_armor_monoid = minetest.global_exists("armor_monoid")
-local use_pova_mod = minetest.get_modpath("pova")
 local armor_def = setmetatable({}, {
 	__index = function()
 		return setmetatable({
@@ -82,6 +79,9 @@ armor = {
 		on_destroy = {},
 	},
 	migrate_old_inventory = true,
+	use_pova_mod = false,
+	use_player_monoids = false,
+	use_armor_monoid = false,
 	version = "0.4.13",
 }
 
@@ -90,7 +90,7 @@ armor.config = {
 	init_times = 10,
 	bones_delay = 1,
 	update_time = 1,
-	drop = minetest.get_modpath("bones") ~= nil,
+	drop = false,
 	destroy = false,
 	level_multiplier = 1,
 	heal_multiplier = 1,
@@ -103,7 +103,7 @@ armor.config = {
 	material_mithril = true,
 	material_crystal = true,
 	water_protect = true,
-	fire_protect = minetest.get_modpath("ethereal") ~= nil,
+	fire_protect = false,
 	punch_damage = true,
 }
 
@@ -116,7 +116,7 @@ end
 armor.register_armor_group = function(self, group, base)
 	base = base or 100
 	self.registered_groups[group] = base
-	if use_armor_monoid then
+	if self.use_armor_monoid then
 		armor_monoid.register_armor_group(group, base)
 	end
 end
@@ -284,7 +284,8 @@ armor.set_player_armor = function(self, player)
 	for _, phys in pairs(self.physics) do
 		self.def[name][phys] = physics[phys]
 	end
-	if use_armor_monoid then
+
+	if self.use_armor_monoid then
 		armor_monoid.monoid:add_change(player, change, "3d_armor:armor")
 	else
 		-- Preserve immortal group (damage disabled for player)
@@ -294,21 +295,9 @@ armor.set_player_armor = function(self, player)
 		end
 		player:set_armor_groups(groups)
 	end
-	if use_player_monoids then
-		player_monoids.speed:add_change(player, physics.speed,
-			"3d_armor:physics")
-		player_monoids.jump:add_change(player, physics.jump,
-			"3d_armor:physics")
-		player_monoids.gravity:add_change(player, physics.gravity,
-			"3d_armor:physics")
-	elseif use_pova_mod then
-		-- only add the changes, not the default 1.0 for each physics setting
-		pova.add_override(name, "3d_armor", {
-			speed = physics.speed - 1,
-			jump = physics.jump - 1,
-			gravity = physics.gravity - 1,
-		})
-		pova.do_override(player)
+
+	if self.use_player_monoids or self.use_pova_mod then
+		self:set_player_physics_override(player, name, physics)
 	else
 		player:set_physics_override(physics)
 	end
@@ -406,16 +395,11 @@ armor.damage = function(self, player, index, stack, use)
 	end
 end
 
-armor.get_player_skin = function(self, name)
-	if (self.skin_mod == "skins" or self.skin_mod == "simple_skins") and skins.skins[name] then
-		return skins.skins[name]..".png"
-	elseif self.skin_mod == "u_skins" and u_skins.u_skins[name] then
-		return u_skins.u_skins[name]..".png"
-	elseif self.skin_mod == "wardrobe" and wardrobe.playerSkins and wardrobe.playerSkins[name] then
-		return wardrobe.playerSkins[name]
-	end
-	return armor.default_skin..".png"
+armor.get_default_player_skin = function(self, name)
+	return self.default_skin..".png"
 end
+
+armor.get_player_skin = armor.get_default_player_skin
 
 armor.add_preview = function(self, preview)
 	skin_previews[preview] = true
