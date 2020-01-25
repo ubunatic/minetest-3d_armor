@@ -1,5 +1,6 @@
 -- support for i18n
 local S = armor_i18n.gettext
+local F = minetest.formspec_escape
 
 local skin_previews = {}
 local use_player_monoids = minetest.global_exists("player_monoids")
@@ -31,16 +32,23 @@ local armor_textures = setmetatable({}, {
 
 armor = {
 	timer = 0,
+	last_punch_time = {},
 	elements = {"head", "torso", "legs", "feet"},
 	physics = {"jump", "speed", "gravity"},
 	attributes = {"heal", "fire", "water"},
-	formspec = "image[2.5,0;2,4;armor_preview]"..
+	formspec =
+		"image[2.5,0;2,4;armor_preview]"..
 		default.gui_bg..
 		default.gui_bg_img..
 		default.gui_slots..
 		default.get_hotbar_bg(0, 4.7)..
 		"list[current_player;main;0,4.7;8,1;]"..
-		"list[current_player;main;0,5.85;8,3;8]",
+		"list[current_player;main;0,5.85;8,3;8]"..
+		"label[5,1;"..F(S("Level"))..": armor_level]"..
+		"label[5,1.5;"..F(S("Heal"))..":  armor_attr_heal]",
+	formspec_technic =
+		"label[5,2.5;"..F(S("Radiation"))..":  armor_group_radiation]",
+	formspec_fire = "label[5,2;"..F(S("Fire"))..":  armor_attr_fire]",
 	def = armor_def,
 	textures = armor_textures,
 	default_skin = "character",
@@ -279,6 +287,11 @@ armor.set_player_armor = function(self, player)
 	if use_armor_monoid then
 		armor_monoid.monoid:add_change(player, change, "3d_armor:armor")
 	else
+		-- Preserve immortal group (damage disabled for player)
+		local immortal = player:get_armor_groups().immortal
+		if immortal and immortal ~= 0 then
+			groups.immortal = 1
+		end
 		player:set_armor_groups(groups)
 	end
 	if use_player_monoids then

@@ -9,3 +9,4 @@ armor.conf
 ## Eclipse project files & directories
 .project
 .settings
+.vscode
